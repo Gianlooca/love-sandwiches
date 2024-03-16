@@ -20,7 +20,7 @@ def get_sales_data():
     """
     Get sales figures input from the user.
     Run a while loop to collect a valid string of data from the user
-    via the terminal, which must be a string of 5 numbers separated
+    via the terminal, which must be a string of 6 numbers separated
     by commas. The loop will repeteadly request data, until it is valid.
     """
     while True:
