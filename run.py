@@ -82,6 +82,24 @@ def calculate_surplus_data(sales_row):
     
     return surplus_data
 
+
+def get_last_5_entries_sales():
+    """
+    Collects columns of data from sales worksheet,
+    collecting the last 5 entries for each sandwich and returns
+    the data as a list of lists.
+    """
+    sales = SHEET.worksheet('sales')
+
+    columns = []
+
+    for ind in range(1, 7):
+        column = sales.col_values(ind)
+        columns.append(column[-5:])
+    
+    return columns
+
+
 def main():
     """
     Run all program functions. It's common practice to wrap
@@ -94,4 +112,6 @@ def main():
     update_worksheet(new_surplus_data, 'surplus')
 
 print('Welcome to Love Sandwiches Data Automation') # This is the first message that we're going to see before the functions inside the main function are called
-main() #in Python, you can't call a function above where it's defined, otherwise it will throw an error.
+#main() #in Python, you can't call a function above where it's defined, otherwise it will throw an error.
+
+sales_columns = get_last_5_entries_sales()
